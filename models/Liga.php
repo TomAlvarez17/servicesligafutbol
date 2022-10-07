@@ -55,24 +55,22 @@ class Liga extends Conectar
 //         return $Array;
 //     }
 
-//     public function insert_heroe($nombre, $imagen, $descripcion, $categoria, $genero)
-//     {
-//         $conectar = parent::conexion();
-//         parent::set_names();
-//         $sql = "INSERT INTO `heroes`(`nombre`, `imagen`, `descripcion`,`categoria`,`genero`) VALUES (?,?,?,?,?);";
-//         $sql = $conectar->prepare($sql);
-//         $sql->bindValue(1, $nombre);
-//         $sql->bindValue(2, $imagen);
-//         $sql->bindValue(3, $descripcion);
-//         $sql->bindValue(4, $categoria);
-//         $sql->bindValue(5, $genero);
-//         $resultado['estatus'] =  $sql->execute();
-//         $lastInserId =  $conectar->lastInsertId();
-//         if ($lastInserId != "0") {
-//             $resultado['id'] = (int)$lastInserId;
-//         }
-//         return $resultado;
-//     }
+    public function insert_partido($arbitro, $local, $visita)
+    {
+        $conectar = parent::conexion();
+        parent::set_names();
+        $sql = "INSERT INTO `vistapartido`(`arbitro`, `equipolocal`, `equipovisitante`) VALUES (?,?,?);";
+        $sql = $conectar->prepare($sql);
+        $sql->bindValue(1, $arbitro);
+        $sql->bindValue(2, $local);
+        $sql->bindValue(3, $visita);
+        $resultado['estatus'] =  $sql->execute();
+        $lastInserId =  $conectar->lastInsertId();
+        if ($lastInserId != "0") {
+            $resultado['id'] = (int)$lastInserId;
+        }
+        return $resultado;
+    }
 
 //     public function update_heroe($id, $nombre, $imagen, $descripcion, $categoria, $genero)
 //     {

@@ -17,10 +17,10 @@ switch ($_GET["opcion"]) {
     //     echo json_encode($datos);
     //     break;
 
-    // case "Insert":
-    //     $datos = $liga->insert_heroe($body["nombre"], $body["imagen"], $body["descripcion"], $body["categoria"], $body["genero"]);
-    //     echo json_encode($datos);
-    //     break;
+    case "InsertPartido":
+        $datos = $liga->insert_partido($body["arbitro"], $body["local"], $body["visita"]);
+        echo json_encode($datos);
+        break;
 
     // case "Update":
     //     $datos = $liga->update_heroe($body["id"], $body["nombre"], $body["imagen"], $body["descripcion"], $body["categoria"], $body["genero"]);
