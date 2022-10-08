@@ -34,30 +34,30 @@ switch ($_GET["opcion"]) {
         echo json_encode($datos);
         break;
 
-// ------------------------------------------------------ Equipo
+// ------------------------------------------------------ Jugador
 
-    case "GetAllEquipo":
-        $datos = $liga->get_equipos();
+    case "GetAllJugador":
+        $datos = $liga->get_jugadores();
         echo json_encode($datos);
         break;
 
-    case "GetIdEquipo":
-        $datos = $liga->get_equipo_x_id($body["equipo_id"]);
+    case "GetIdJugador":
+        $datos = $liga->get_jugador_x_id($body["jugador_id"]);
         echo json_encode($datos);
         break;
 
-    case "InsertEquipo":
-        $datos = $liga->insert_equipo($body["nombre"], $body["jugador"]);
+    case "InsertJugador":
+        $datos = $liga->insert_jugador($body["nombre"], $body["jugador"]);
         echo json_encode($datos);
         break;
 
-    case "UpdateEquipo":
-        $datos = $liga->update_equipo($body["id"], $body["nombre"], $body["jugador"]);
+    case "UpdateJugador":
+        $datos = $liga->update_jugador($body["id"], $body["nombre"], $body["jugador"]);
         echo json_encode($datos);
         break;
 
-    case "DeleteEquipo":
-        $datos = $liga->delete_equipo($body["id"]);
+    case "DeleteJugador":
+        $datos = $liga->delete_jugador($body["id"]);
         echo json_encode($datos);
         break;
 

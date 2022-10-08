@@ -97,9 +97,9 @@ class Liga extends Conectar
         return $resultado;
     }
 
-// -------------------------------------------------------------------Equipo
+// -------------------------------------------------------------------Jugador
 
-    public function get_equipos()
+    public function get_jugadores()
     {
         $db = parent::conexion();
         parent::set_names();
@@ -116,7 +116,7 @@ class Liga extends Conectar
         return $Array;
     }
 
-    public function get_equipo_x_id($equipo_id)
+    public function get_jugador_x_id($equipo_id)
     {
         $conectar = parent::conexion();
         parent::set_names();
@@ -131,7 +131,7 @@ class Liga extends Conectar
         return $Array;
     }
 
-    public function insert_equipo($nombre, $jugador)
+    public function insert_jugador($nombre, $jugador)
     {
         $conectar = parent::conexion();
         parent::set_names();
@@ -147,7 +147,7 @@ class Liga extends Conectar
         return $resultado;
     }
 
-    public function update_equipo($id,$nombre, $jugador)
+    public function update_jugador($id,$nombre, $jugador)
     {
         $conectar = parent::conexion();
         parent::set_names();
@@ -160,7 +160,7 @@ class Liga extends Conectar
         return $resultado;
     }
 
-    public function delete_equipo($id)
+    public function delete_jugador($id)
     {
         $conectar = parent::conexion();
         parent::set_names();
